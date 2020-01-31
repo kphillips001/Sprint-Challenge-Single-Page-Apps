@@ -1,38 +1,30 @@
 import React, { useState, useEffect } from "react";
+import CharacterCard from "./CharacterCard";
+import Axios from "axios";
 
 export default function SearchForm(props) {
- 
-  const[searchTerm, setSearchTerm] = useState('')
-  const[searchResults, setSearchResults] = useState([]);
 
+  
+ 
   const handleChange = e => {
-    setSearchTerm(e.target.value);
+    props.setSearchTerm(e.target.value);
   };
 
-  useEffect(() => {
-    const results = characters.filter(character => 
-      character.name
-      .toLowerCase()
-      .includes(searchTerm.toLowerCase())
-    );
-    setSearchResults(results);
-  }, [searchTerm])
+   
 
   return (
-    <section className="search-form">
-     // Add a search form here
-     <form onSubmit={handleChange}>
-       <input 
-        name="search"
-        placeholder="search by name"
-        value={searchTerm}
-        onChange={handleChange}
-       />
-       {searchResults.map(character => {
-         return<h3>{character}</h3>
-       })}
-
-     </form>
-    </section>
+    <div className="App">
+    {/* create a search bar (input field) */}
+   
+    <input
+      name="search"
+      placeholder="search by name"
+      value={props.searchTerm}
+      onChange={e => handleChange(e)}
+    />
+    {/* map through search results to dislay person
+    that was searched for and display a list of them */}
+    
+  </div>
   );
 }
