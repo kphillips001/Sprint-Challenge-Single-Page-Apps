@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import CharacterCard from "./CharacterCard";
-import Axios from "axios";
+
 
 export default function SearchForm(props) {
 
@@ -10,8 +9,7 @@ export default function SearchForm(props) {
     props.setSearchTerm(e.target.value);
   };
 
-   
-
+  
   return (
     <div className="App">
     {/* create a search bar (input field) */}
