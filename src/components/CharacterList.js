@@ -22,17 +22,12 @@ export default function CharacterList() {
 
   return (
     <section className="character-list">
-      {characters.map(character => (
-     
-     <CharacterCard
-        key={character.id}
-        name={character.name}
-        species={character.species}
-        gender={character.gender}
-        image={character.image}
+      <h1>Character List</h1>
       
-      />
-      ))}
+      <br />
+      {characters.map(character => {
+        return <CharacterCard key={character.id} character={character} />
+      })}
     </section>
   );
 }

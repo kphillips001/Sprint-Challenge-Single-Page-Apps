@@ -8,7 +8,7 @@ export default function CharacterCard(props) {
     <div className="container">
       <Card>
         <CardImg src={props.character.image} />
-        <CardTitle>{props.chracter.name}</CardTitle>
+        <CardTitle>{props.character.name}</CardTitle>
       </Card>
     </div>
   )
