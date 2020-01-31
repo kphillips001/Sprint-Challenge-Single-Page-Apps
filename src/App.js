@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./components/Header.js";
 import CharacterList from "./components/CharacterList.js";
 import WelcomePage from "./components/WelcomePage.js";
+import SearchForm from "./components/SearchForm.js";
 import {Route, Link, Switch} from 'react-router-dom';
 
 export default function App() {
@@ -14,15 +15,15 @@ export default function App() {
       <Link to='/search'>Search</Link> 
 
       <Switch>
-        <Route exact path="/search">
+        <Route path="/search">
+          <SearchForm/>
+        </Route>
         
+        <Route path="/characters">
+          <CharacterList/>
         </Route>
 
-        <Route exact path="/characters">
-        <CharacterList/>
-        </Route>
-
-        <Route exact path="/">
+        <Route path="/">
           <WelcomePage/>
         </Route>
       
